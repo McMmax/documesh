@@ -1,0 +1,1 @@
+import{ah as a,q as s}from"./DRsTke_w.js";const u=()=>{const o=a(),e=s(()=>o.username.value??"Anonymous"),t=s(()=>o.color.value);return{name:e,color:t,setName:o.setDisplayName,setColor:o.setColor}};export{u};

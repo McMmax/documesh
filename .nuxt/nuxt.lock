@@ -1,0 +1,9 @@
+{
+  "pid": 2136,
+  "startedAt": 1782139174560,
+  "command": "dev",
+  "cwd": "C:/Users/trapaholics/WebstormProjects/documint",
+  "port": 3847,
+  "hostname": "::1",
+  "url": "http://[::1]:3847"
+}

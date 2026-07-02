@@ -1,0 +1,249 @@
+import { _ as __nuxt_component_0$1 } from './nuxt-link-Bwq3qhg5.mjs';
+import { defineComponent, computed, mergeProps, unref, withCtx, createVNode, ref, watch, openBlock, createBlock, useSSRContext, toValue } from 'vue';
+import { ssrRenderAttrs, ssrRenderComponent, ssrRenderAttr, ssrIncludeBooleanAttr, ssrRenderClass, ssrInterpolate } from 'vue/server-renderer';
+import { a as useRoute, _ as __nuxt_component_1, t as tables, r as reducers, n as navigateTo } from './server.mjs';
+import { useTable, useReducer } from 'spacetimedb/vue';
+import '../_/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:url';
+import '@iconify/utils';
+import 'node:crypto';
+import 'consola';
+import 'node:path';
+import 'vue-router';
+import '@iconify/vue';
+import 'framesync';
+import 'popmotion';
+import 'style-value-types';
+import 'tailwindcss/colors';
+import 'spacetimedb';
+import '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/utils';
+
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "EditorDocBar",
+  __ssrInlineRender: true,
+  props: {
+    title: {},
+    saved: { type: Boolean },
+    isPinned: { type: Boolean },
+    isLocked: { type: Boolean },
+    isLinkShareEnabled: { type: Boolean }
+  },
+  emits: ["update:title", "pin", "lock", "toggle-link-share", "delete"],
+  setup(__props, { emit: __emit }) {
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0$1;
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-4 py-2 dark:border-gray-800 dark:bg-gray-950" }, _attrs))}>`);
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/dashboard",
+        class: "flex shrink-0 items-center rounded p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300",
+        title: "Back to dashboard"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"${_scopeId}><path d="M19 12H5M12 5l-7 7 7 7"${_scopeId}></path></svg>`);
+          } else {
+            return [
+              (openBlock(), createBlock("svg", {
+                width: "15",
+                height: "15",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                "stroke-width": "2",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }, [
+                createVNode("path", { d: "M19 12H5M12 5l-7 7 7 7" })
+              ]))
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`<input${ssrRenderAttr("value", __props.title)} type="text" class="min-w-0 flex-1 bg-transparent text-sm font-medium text-gray-900 outline-none placeholder:text-gray-400 dark:text-white" placeholder="Untitled"${ssrIncludeBooleanAttr(__props.isLocked) ? " readonly" : ""}><div class="flex shrink-0 items-center gap-0.5"><button class="${ssrRenderClass([__props.isPinned ? "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400" : "text-gray-400 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300", "flex items-center gap-1 rounded px-2 py-1 text-xs font-medium transition-colors"])}"${ssrRenderAttr("title", __props.isPinned ? "Unpin" : "Pin")}><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 3a2 2 0 0 1 2 2v1.5l1.707 1.707A1 1 0 0 1 20 9v1a1 1 0 0 1-1 1h-5v7l-1 3-1-3v-7H7a1 1 0 0 1-1-1V9a1 1 0 0 1 .293-.707L8 6.5V5a2 2 0 0 1 2-2z"></path></svg><span>Pin</span></button><button class="${ssrRenderClass([__props.isLocked ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" : "text-gray-400 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300", "flex items-center gap-1 rounded px-2 py-1 text-xs font-medium transition-colors"])}"${ssrRenderAttr("title", __props.isLocked ? "Unlock" : "Lock")}><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span>${ssrInterpolate(__props.isLocked ? "Locked" : "Lock")}</span></button><button class="${ssrRenderClass([__props.isLinkShareEnabled ? "bg-mint-100 text-mint-700 dark:bg-mint-900/30 dark:text-mint-400" : "text-gray-400 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300", "flex items-center gap-1 rounded px-2 py-1 text-xs font-medium transition-colors"])}"${ssrRenderAttr("title", __props.isLinkShareEnabled ? "Make private" : "Make public")}><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span>${ssrInterpolate(__props.isLinkShareEnabled ? "Public" : "Share")}</span></button><div class="mx-1 h-3.5 w-px bg-gray-200 dark:bg-gray-700"></div><button class="flex items-center gap-1 rounded px-2 py-1 text-xs font-medium text-gray-400 transition-colors hover:bg-red-50 hover:text-red-600 dark:hover:bg-red-900/20 dark:hover:text-red-400" title="Delete document"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path></svg></button><div class="mx-1 h-3.5 w-px bg-gray-200 dark:bg-gray-700"></div><div class="flex items-center gap-1.5 pl-1"><div class="${ssrRenderClass([__props.saved ? "bg-mint-500" : "bg-amber-400", "size-1.5 rounded-full transition-colors"])}"></div><span class="text-xs text-gray-400">${ssrInterpolate(__props.saved ? "Saved" : "Saving…")}</span></div></div></div>`);
+    };
+  }
+});
+const _sfc_setup$1 = _sfc_main$1.setup;
+_sfc_main$1.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/editor/EditorDocBar.vue");
+  return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
+};
+const __nuxt_component_0 = Object.assign(_sfc_main$1, { __name: "EditorDocBar" });
+typeof WorkerGlobalScope !== "undefined" && globalThis instanceof WorkerGlobalScope;
+const noop = () => {
+};
+function createFilterWrapper(filter, fn) {
+  function wrapper(...args) {
+    return new Promise((resolve, reject) => {
+      Promise.resolve(filter(() => fn.apply(this, args), {
+        fn,
+        thisArg: this,
+        args
+      })).then(resolve).catch(reject);
+    });
+  }
+  return wrapper;
+}
+function debounceFilter(ms, options = {}) {
+  let timer;
+  let maxTimer;
+  let lastRejector = noop;
+  const _clearTimeout = (timer2) => {
+    clearTimeout(timer2);
+    lastRejector();
+    lastRejector = noop;
+  };
+  let lastInvoker;
+  const filter = (invoke2) => {
+    const duration = toValue(ms);
+    const maxDuration = toValue(options.maxWait);
+    if (timer) _clearTimeout(timer);
+    if (duration <= 0 || maxDuration !== void 0 && maxDuration <= 0) {
+      if (maxTimer) {
+        _clearTimeout(maxTimer);
+        maxTimer = void 0;
+      }
+      return Promise.resolve(invoke2());
+    }
+    return new Promise((resolve, reject) => {
+      lastRejector = options.rejectOnCancel ? reject : resolve;
+      lastInvoker = invoke2;
+      if (maxDuration && !maxTimer) maxTimer = setTimeout(() => {
+        if (timer) _clearTimeout(timer);
+        maxTimer = void 0;
+        resolve(lastInvoker());
+      }, maxDuration);
+      timer = setTimeout(() => {
+        if (maxTimer) _clearTimeout(maxTimer);
+        maxTimer = void 0;
+        resolve(invoke2());
+      }, duration);
+    });
+  };
+  return filter;
+}
+// @__NO_SIDE_EFFECTS__
+function useDebounceFn(fn, ms = 200, options = {}) {
+  return createFilterWrapper(debounceFilter(ms, options), fn);
+}
+const useDocumentTitle = (docId) => {
+  const [rows] = useTable(tables.document.where((r) => r.id.eq(docId.value)));
+  const doc = computed(() => rows.value[0] ?? null);
+  const title = ref("");
+  const saved = ref(true);
+  const dirty = ref(false);
+  const updateTitle = useReducer(reducers.documentUpdateTitle);
+  watch(doc, (d) => {
+    if (d && !dirty.value) title.value = d.title;
+  }, { immediate: true });
+  const flush = /* @__PURE__ */ useDebounceFn(() => {
+    if (!dirty.value) return;
+    updateTitle({ id: docId.value, title: title.value.trim() || "Untitled" }).catch(() => {
+    });
+    dirty.value = false;
+    saved.value = true;
+  }, 1e3);
+  function onTitleInput(val) {
+    title.value = val;
+    dirty.value = true;
+    saved.value = false;
+    flush();
+  }
+  const isPinned = computed(() => doc.value?.isPinned ?? false);
+  const isLocked = computed(() => doc.value?.isLocked ?? false);
+  const isLinkShareEnabled = computed(() => doc.value?.linkShareEnabled ?? false);
+  const setPinned = useReducer(reducers.documentSetPinned);
+  const setLocked = useReducer(reducers.documentSetLocked);
+  const setLinkShare = useReducer(reducers.documentSetLinkShare);
+  const deleteDoc = useReducer(reducers.documentDelete);
+  function onTogglePin() {
+    setPinned({ id: docId.value, pinned: !isPinned.value }).catch(() => {
+    });
+  }
+  function onToggleLock() {
+    setLocked({ id: docId.value, locked: !isLocked.value }).catch(() => {
+    });
+  }
+  function onToggleLinkShare() {
+    setLinkShare({ id: docId.value, enabled: !isLinkShareEnabled.value, role: "viewer" }).catch(() => {
+    });
+  }
+  async function onDelete() {
+    if (!(void 0).confirm("Delete this document? This cannot be undone.")) return;
+    deleteDoc({ id: docId.value }).catch(() => {
+    });
+    await navigateTo("/dashboard");
+  }
+  return { doc, title, saved, isPinned, isLocked, isLinkShareEnabled, onTitleInput, onTogglePin, onToggleLock, onToggleLinkShare, onDelete };
+};
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "[id]",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const route = useRoute();
+    const docId = computed(() => route.params.id);
+    const {
+      title,
+      saved,
+      isPinned,
+      isLocked,
+      isLinkShareEnabled,
+      onTitleInput,
+      onTogglePin,
+      onToggleLock,
+      onToggleLinkShare,
+      onDelete
+    } = useDocumentTitle(docId);
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_EditorDocBar = __nuxt_component_0;
+      const _component_ClientOnly = __nuxt_component_1;
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex h-full flex-col overflow-hidden" }, _attrs))}>`);
+      _push(ssrRenderComponent(_component_EditorDocBar, {
+        title: unref(title),
+        saved: unref(saved),
+        "is-pinned": unref(isPinned),
+        "is-locked": unref(isLocked),
+        "is-link-share-enabled": unref(isLinkShareEnabled),
+        "onUpdate:title": unref(onTitleInput),
+        onPin: unref(onTogglePin),
+        onLock: unref(onToggleLock),
+        onToggleLinkShare: unref(onToggleLinkShare),
+        onDelete: unref(onDelete)
+      }, null, _parent));
+      _push(ssrRenderComponent(_component_ClientOnly, null, {
+        fallback: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<div class="flex flex-1 items-center justify-center"${_scopeId}><div class="size-5 animate-spin rounded-full border-2 border-mint-500 border-t-transparent"${_scopeId}></div></div>`);
+          } else {
+            return [
+              createVNode("div", { class: "flex flex-1 items-center justify-center" }, [
+                createVNode("div", { class: "size-5 animate-spin rounded-full border-2 border-mint-500 border-t-transparent" })
+              ])
+            ];
+          }
+        })
+      }, _parent));
+      _push(`</div>`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/doc/[id].vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+
+export { _sfc_main as default };
+//# sourceMappingURL=_id_-Bawvu206.mjs.map
